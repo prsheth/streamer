@@ -1,4 +1,4 @@
-import { SIGN_OUT, SIGN_OUT, SIGN_IN } from "./types";
+import { SIGN_OUT, SIGN_IN } from "../actions/types";
 
 //INITIALIZER
 const INTIAL_STATE = {
