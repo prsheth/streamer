@@ -6,7 +6,7 @@ The app will enable users to login and create unlimited streams for free
 
 ### Features
 
-1. Users will be able to login using Google
+1. Users are able to login using Google
 
 #### To-Do
 
