@@ -2,13 +2,20 @@ import React from "react";
 import { Field, reduxForm } from "redux-form";
 
 class StreamCreate extends React.Component {
+  renderInput(formProps) {
+    return (
+      <input
+        value={formProps.input.value}
+        onChange={formProps.input.onChange}
+      />
+    );
+  }
   render() {
-    console.log(this.props);
     return (
       <div>
         <form>
-          <Field name="titleOfStream" />
-          <Field name="descriptionOfStream" />
+          <Field name="titleOfStream" component={this.renderInput} />
+          <Field name="descriptionOfStream" component={this.renderInput} />
         </form>
       </div>
     );
