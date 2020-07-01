@@ -8,6 +8,7 @@ import {
   EDIT_STREAM,
   DELETE_STREAM,
 } from "./types";
+import history from "../history";
 
 export const signIn = (userId) => {
   return {
@@ -28,7 +29,8 @@ export const createStream = (formValues) => {
     const { userId } = getState().auth;
     const response = await API().post("/streams", { ...formValues, userId });
     dispatch({ type: CREATE_STREAM, payload: response.data });
-    //programmtically navigate users to list all streams, on success
+    //programmtically navigate users to list all streams, on success with custom history object
+    history.push("/");
   };
 };
 
