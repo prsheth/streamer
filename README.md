@@ -2,7 +2,7 @@
 
 ## Intro
 
-The app will enable users to login and create unlimited streams for free
+The app will enable users to login and create free unlimited streams
 
 ### Features
 

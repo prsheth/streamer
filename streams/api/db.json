@@ -1,9 +1,20 @@
 {
-  "streams": [
+  "streams": [{
+      "titleOfStream": "Stock webinar ",
+      "descriptionOfStream": "a webinar about stocks",
+      "id": 2
+    },
     {
-      "titleOfStream": "Stream",
-      "descriptionOfStream": "My first ever stream",
-      "id": 1
+      "titleOfStream": "Authenticated Stream",
+      "descriptionOfStream": "user id attached to this",
+      "userId": "111144933837592887656",
+      "id": 3
+    },
+    {
+      "titleOfStream": "Another nice stream",
+      "descriptionOfStream": "Did you route to stream list",
+      "userId": "111144933837592887656",
+      "id": 4
     }
   ]
 }
