@@ -2,14 +2,10 @@
 
 import React from "react";
 import ReactDOM from "react-dom";
-import history from "../../history";
 
 const Modal = (props) => {
   return ReactDOM.createPortal(
-    <div
-      onClick={() => history.push("/")}
-      className="ui dimmer modals visible active"
-    >
+    <div onClick={props.onDismiss} className="ui dimmer modals visible active">
       <div
         onClick={(e) => e.stopPropagation()} //make sure the above event deosn't get propogated to all children
         className="ui standard modal visible active"
