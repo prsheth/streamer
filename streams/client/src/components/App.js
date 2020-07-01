@@ -22,9 +22,13 @@ const App = () => {
           <Header />
           <Route path="/" exact component={StreamList}></Route>
           <Route path="/streams/new" exact component={StreamCreate}></Route>
-          <Route path="/streams/edit" exact component={StreamEdit}></Route>
-          <Route path="/streams/delete" exact component={StreamDelete}></Route>
-          <Route path="/streams/show" exact component={StreamView}></Route>
+          <Route path="/streams/edit/:id" exact component={StreamEdit}></Route>
+          <Route
+            path="/streams/delete/:id"
+            exact
+            component={StreamDelete}
+          ></Route>
+          <Route path="/streams/show/:id" exact component={StreamView}></Route>
         </div>
       </Router>
     </div>
