@@ -24,9 +24,11 @@ export const signOut = () => {
 
 //ALL CRUD OPERATION FOR STREAMS
 export const createStream = (formValues) => {
-  return async (dispatch) => {
-    const response = await API().post("/streams", formValues);
+  return async (dispatch, getState) => {
+    const { userId } = getState().auth;
+    const response = await API().post("/streams", { ...formValues, userId });
     dispatch({ type: CREATE_STREAM, payload: response.data });
+    //programmtically navigate users to list all streams, on success
   };
 };
 
