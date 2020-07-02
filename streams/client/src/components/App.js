@@ -1,5 +1,5 @@
 import React from "react";
-import { Router, Route } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 /* For production:
 BrowserRouter makes it challenging in production wehen not using any deployment services
 Configure web server to respond with index.html in pathname when trying to look for a route
@@ -20,15 +20,21 @@ const App = () => {
       <Router history={history}>
         <div>
           <Header />
-          <Route path="/" exact component={StreamList}></Route>
-          <Route path="/streams/new" exact component={StreamCreate}></Route>
-          <Route path="/streams/edit/:id" exact component={StreamEdit}></Route>
-          <Route
-            path="/streams/delete/:id"
-            exact
-            component={StreamDelete}
-          ></Route>
-          <Route path="/streams/show/:id" exact component={StreamView}></Route>
+          <Switch>
+            <Route path="/" exact component={StreamList}></Route>
+            <Route path="/streams/new" exact component={StreamCreate}></Route>
+            <Route
+              path="/streams/edit/:id"
+              exact
+              component={StreamEdit}
+            ></Route>
+            <Route
+              path="/streams/delete/:id"
+              exact
+              component={StreamDelete}
+            ></Route>
+            <Route path="/streams/:id" exact component={StreamView}></Route>
+          </Switch>
         </div>
       </Router>
     </div>
