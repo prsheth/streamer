@@ -16,7 +16,7 @@ const Modal = (props) => {
       </div>
     </div>,
     document.querySelector("#modal")
-    //PORTAL is used so that is component can be ported to another location breaking from the nested compoenent herirarchy of React
+    //PORTAL is used so that is component can be ported to another location breaking from the nested component herirarchy of React
     // this div is a sibling to root and a child of body
   );
 };

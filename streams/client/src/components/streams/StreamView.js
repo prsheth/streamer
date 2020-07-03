@@ -11,13 +11,27 @@ class StreamView extends React.Component {
   componentDidMount() {
     const { id } = this.props.match.params;
     this.props.fetchStream(id);
-    //attach flv player to video element
-    this.player = flv.createPlayer({
-      type: "flv",
-      url: `http://localhost:8000/live/${id}.flv`,
-    });
-    this.player.attachMediaElement(this.videoRef.current);
-    this.player.load();
+    this.buildPlayer();
+  }
+  componentDidUpdate() {
+    this.buildPlayer();
+  }
+  componentWillUnmount() {
+    this.player.destroy();
+  }
+  buildPlayer() {
+    if (this.player || !this.props.stream) {
+      return;
+    } else {
+      const { id } = this.props.match.params;
+      //attach flv player to video element
+      this.player = flv.createPlayer({
+        type: "flv",
+        url: `http://localhost:8000/live/${id}.flv`,
+      });
+      this.player.attachMediaElement(this.videoRef.current);
+      this.player.load();
+    }
   }
   render() {
     if (!this.props.stream) return <div>Loading.....</div>;
